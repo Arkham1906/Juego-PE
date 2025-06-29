@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b118st6lnbwa5"]
+
+[ext_resource type="Texture2D" uid="uid://udgks31giuem" path="res://assets/paisaje up.png" id="1_eciuy"]
+[ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_2lask"]
+
+[node name="Nivel 1" type="Node2D"]
+
+[node name="PaisajeUp" type="Sprite2D" parent="."]
+position = Vector2(44, 58)
+texture = ExtResource("1_eciuy")
+
+[node name="Personaje" parent="." instance=ExtResource("2_2lask")]
+position = Vector2(30, 71)
