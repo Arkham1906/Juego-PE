@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
-@export var velocidad: float = 201.0
+@export var velocidad: float = 200.0
 @export var gravedad: float = 980.0
 @export var salto: float = -500.0
 
 func _physics_process(delta):
+	# Aplicar gravedad
 	if not is_on_floor():
 		velocity.y += gravedad * delta
 	else:
 		velocity.y = 0.0
 
-
+	# Movimiento horizontal
 	var direccion = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		direccion.x += 1
@@ -19,6 +20,8 @@ func _physics_process(delta):
 
 	velocity.x = direccion.x * velocidad
 
-
+	# Salto
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = salto
 
 	move_and_slide()
