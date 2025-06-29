@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://btwgpfn6mug6j"]
+[gd_scene load_steps=3 format=3 uid="uid://b118st6lnbwa5"]
 
 [ext_resource type="Texture2D" uid="uid://udgks31giuem" path="res://assets/paisaje up.png" id="1_eciuy"]
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_2lask"]
