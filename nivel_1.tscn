@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b118st6lnbwa5"]
+[gd_scene load_steps=3 format=3 uid="uid://bfsd6qvpq5lb4"]
 
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_2lask"]
 [ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="2_eciuy"]
