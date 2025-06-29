@@ -14,6 +14,7 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 
 
+
 	var direccion = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		direccion.x += 1
@@ -26,8 +27,5 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = salto
 
-
-
-
-
 	move_and_slide()
+	
