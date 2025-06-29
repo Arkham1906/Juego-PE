@@ -10,6 +10,8 @@ func _physics_process(delta):
 		velocity.y += gravedad * delta
 	else:
 		velocity.y = 0.0
+	if global_position.y > 1000:
+		get_tree().reload_current_scene()
 
 	# Movimiento horizontal
 	var direccion = Vector2.ZERO
@@ -23,5 +25,9 @@ func _physics_process(delta):
 	# Salto
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = salto
+
+
+
+
 
 	move_and_slide()
