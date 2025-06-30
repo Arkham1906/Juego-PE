@@ -15,7 +15,7 @@ _data = {
 &"run": SubResource("Animation_35kqm")
 }
 
-[node name="Personaje" type="CharacterBody2D"]
+[node name="Personaje" type="CharacterBody2D" groups=["jugador"]]
 position = Vector2(-168, 11)
 script = ExtResource("1_imvb3")
 
