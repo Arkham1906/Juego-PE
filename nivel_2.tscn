@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddobfxm2ldf3w"]
+
+[ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="1_1g353"]
+[ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_t82tv"]
+
+[node name="Nivel2" type="Node2D"]
+position = Vector2(555, 301)
+
+[node name="Piso" parent="." instance=ExtResource("1_1g353")]
+position = Vector2(-375, 24)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
+
+[node name="Personaje" parent="." instance=ExtResource("2_t82tv")]
+position = Vector2(-939, -63)
