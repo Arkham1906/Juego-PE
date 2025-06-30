@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfsd6qvpq5lb4"]
+[gd_scene load_steps=4 format=3 uid="uid://b118st6lnbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_2lask"]
 [ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="2_eciuy"]
+[ext_resource type="PackedScene" uid="uid://wf0n66sdb1y8" path="res://moneda.tscn" id="3_2lask"]
 
 [node name="Nivel 1" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContadorMonedas" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Personaje" parent="." instance=ExtResource("2_2lask")]
 position = Vector2(30, 71)
@@ -13,3 +25,14 @@ position = Vector2(122, 113)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.1, 0.1)
+
+[node name="Moneda" parent="." instance=ExtResource("3_2lask")]
+position = Vector2(442, -12)
+
+[node name="Moneda2" parent="." instance=ExtResource("3_2lask")]
+position = Vector2(782, -17)
+
+[connection signal="moneda_agarrada" from="Moneda" to="Personaje" method="agregar_moneda"]
+[connection signal="moneda_agarrada" from="Moneda" to="Personaje" method="_on_moneda_moneda_agarrada"]
+[connection signal="moneda_agarrada" from="Moneda2" to="Personaje" method="agregar_moneda"]
+[connection signal="moneda_agarrada" from="Moneda2" to="Personaje" method="_on_moneda_moneda_agarrada"]
