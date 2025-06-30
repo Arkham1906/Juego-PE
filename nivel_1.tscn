@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b118st6lnbwa5"]
+[gd_scene load_steps=6 format=3 uid="uid://b118st6lnbwa5"]
 
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_2lask"]
+[ext_resource type="FontFile" uid="uid://bgow8w3uotd0" path="res://Fuentes/Roboto-Italic-VariableFont_wdth,wght.ttf" id="2_320mp"]
 [ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="2_eciuy"]
 [ext_resource type="PackedScene" uid="uid://wf0n66sdb1y8" path="res://moneda.tscn" id="3_2lask"]
 [ext_resource type="PackedScene" uid="uid://dksv7jkpryqrd" path="res://puerta.tscn" id="4_m2gv8"]
@@ -13,13 +14,34 @@ position = Vector2(1549, -584)
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_top = -111.0
+offset_right = 559.0
 offset_bottom = 40.0
 
 [node name="ContadorMonedas" type="Label" parent="UI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -400.0
+offset_top = -291.0
+offset_right = -335.0
+offset_bottom = -4.0
+theme_override_fonts/font = ExtResource("2_320mp")
+theme_override_font_sizes/font_size = 250
+text = "0
+"
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1532.0
+offset_top = -454.0
+offset_right = -466.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("2_320mp")
+theme_override_font_sizes/font_size = 250
+text = "Monedas:
+"
 
 [node name="Personaje" parent="." instance=ExtResource("2_2lask")]
 position = Vector2(30, 71)
