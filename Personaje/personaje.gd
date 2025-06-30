@@ -6,9 +6,11 @@ extends CharacterBody2D
 
 var monedas: int = 0
 var label_monedas: Label
+var animated_sprite: AnimatedSprite2D
 
 func _ready():
 	label_monedas = get_node("../UI/ContadorMonedas")
+	animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -22,10 +24,24 @@ func _physics_process(delta):
 	var direccion = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		direccion.x += 1
-	if Input.is_action_pressed("ui_left"):
+		animated_sprite.play("caminar_derecha")
+	elif Input.is_action_pressed("ui_left"):
 		direccion.x -= 1
+		animated_sprite.play("caminar_izquierda")
+	else:
+		animated_sprite.play("idle")
 
-	velocity.x = direccion.x * velocidad
+
+	var plataforma_velocity = Vector2.ZERO
+	if is_on_floor():
+		var colision = get_slide_collision(0)
+		if colision != null and colision.get_collider() is CharacterBody2D:
+			var plataforma = colision.get_collider() as CharacterBody2D
+			plataforma_velocity = plataforma.velocity
+
+	
+	velocity.x = direccion.x * velocidad + plataforma_velocity.x
+
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = salto
@@ -41,4 +57,10 @@ func agregar_moneda():
 	label_monedas.text = str(monedas)
 	print("¡Moneda agarrada!")
 	aumentar_salto()
-	label_monedas = get_node("../UI/ContadorMonedas")
+
+func esta_en_plataforma_blindada() -> bool:
+	if is_on_floor():
+		var colision = get_slide_collision(0)
+		if colision != null and colision.get_collider().is_in_group("plataforma_blindada"):
+			return true
+	return false
