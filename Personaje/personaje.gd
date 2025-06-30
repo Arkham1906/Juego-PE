@@ -41,3 +41,4 @@ func agregar_moneda():
 	label_monedas.text = str(monedas)
 	print("¡Moneda agarrada!")
 	aumentar_salto()
+	label_monedas = get_node("../UI/ContadorMonedas")
