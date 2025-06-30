@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddobfxm2ldf3w"]
+[gd_scene load_steps=5 format=3 uid="uid://ddobfxm2ldf3w"]
 
 [ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="1_1g353"]
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_t82tv"]
 [ext_resource type="PackedScene" uid="uid://cb8pob5swtcit" path="res://enemigos/policia/policia.tscn" id="3_oaeky"]
+[ext_resource type="FontFile" uid="uid://bgow8w3uotd0" path="res://Fuentes/Roboto-Italic-VariableFont_wdth,wght.ttf" id="4_p4qdr"]
 
 [node name="Nivel2" type="Node2D"]
 position = Vector2(555, 301)
@@ -18,3 +19,13 @@ position = Vector2(-939, -63)
 
 [node name="policia" parent="." instance=ExtResource("3_oaeky")]
 position = Vector2(1969, -187)
+
+[node name="MensajeFinal" type="Label" parent="."]
+visible = false
+offset_left = 895.0
+offset_top = -910.0
+offset_right = 2138.0
+offset_bottom = -801.0
+theme_override_fonts/font = ExtResource("4_p4qdr")
+theme_override_font_sizes/font_size = 250
+text = "Juego Completado"

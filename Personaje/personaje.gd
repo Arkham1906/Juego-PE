@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var velocidad: float = 200.0
+@export var velocidad: float = 2000.0
 @export var gravedad: float = 980.0
-@export var salto: float = -500.0
+@export var salto: float = -1000.0
 
 var monedas: int = 0
 var label_monedas: Label
