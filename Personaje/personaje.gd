@@ -8,7 +8,7 @@ var monedas: int = 0
 var label_monedas: Label
 
 func _ready():
-	label_monedas = get_node("../UI/ContadorMonedas")  # Ajusta esta ruta
+	label_monedas = get_node("../UI/ContadorMonedas")
 
 func _physics_process(delta):
 	if not is_on_floor():
