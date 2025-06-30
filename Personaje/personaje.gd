@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var velocidad: float = 2000.0
 @export var gravedad: float = 980.0
-@export var salto: float = -1000.0
+@export var salto: float = -750.0
 
 var monedas: int = 0
 var label_monedas: Label
@@ -49,7 +49,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func aumentar_salto():
-	salto *= 1.5
+	salto *= 1.1
 	print("Nuevo valor de salto:", salto)
 
 func agregar_moneda():
