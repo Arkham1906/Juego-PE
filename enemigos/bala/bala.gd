@@ -1,11 +1,11 @@
 extends Area2D
 
-var velocidad = -2000  # pixeles por segundo
+var velocidad = -2000  
 
 func _process(delta):
-	position.x += velocidad * delta  # o cambiar la dirección si es vertical, por ejemplo
+	position.x += velocidad * delta  
 
 func _on_body_entered(body):
-	if body.name == "Jugador":  # o verifica si tiene una etiqueta
-		body.morir()  # Asumiendo que el jugador tiene un método para morir
-		queue_free()
+	if body is CharacterBody2D: 
+		get_tree().reload_current_scene()  
+		queue_free()  

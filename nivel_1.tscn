@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_2lask"]
 [ext_resource type="FontFile" uid="uid://bgow8w3uotd0" path="res://Fuentes/Roboto-Italic-VariableFont_wdth,wght.ttf" id="2_320mp"]
 [ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="2_eciuy"]
-[ext_resource type="PackedScene" uid="uid://wf0n66sdb1y8" path="res://moneda.tscn" id="3_2lask"]
+[ext_resource type="PackedScene" uid="uid://wf0n66sdb1y8" path="res://objetos/moneda.tscn" id="3_2lask"]
 [ext_resource type="PackedScene" uid="uid://dksv7jkpryqrd" path="res://puerta.tscn" id="4_m2gv8"]
 
 [node name="Nivel 1" type="Node2D"]
@@ -58,7 +58,7 @@ position = Vector2(442, -12)
 [node name="Moneda2" parent="." instance=ExtResource("3_2lask")]
 position = Vector2(782, -17)
 
-[connection signal="moneda_agarrada" from="Moneda" to="Personaje" method="agregar_moneda"]
 [connection signal="moneda_agarrada" from="Moneda" to="Personaje" method="_on_moneda_moneda_agarrada"]
-[connection signal="moneda_agarrada" from="Moneda2" to="Personaje" method="agregar_moneda"]
+[connection signal="moneda_agarrada" from="Moneda" to="Personaje" method="agregar_moneda"]
 [connection signal="moneda_agarrada" from="Moneda2" to="Personaje" method="_on_moneda_moneda_agarrada"]
+[connection signal="moneda_agarrada" from="Moneda2" to="Personaje" method="agregar_moneda"]

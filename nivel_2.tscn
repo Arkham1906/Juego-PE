@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddobfxm2ldf3w"]
+[gd_scene load_steps=4 format=3 uid="uid://ddobfxm2ldf3w"]
 
 [ext_resource type="PackedScene" uid="uid://cmy7ralx1d57w" path="res://Floors/piso.tscn" id="1_1g353"]
 [ext_resource type="PackedScene" uid="uid://bvneousam5gyt" path="res://Personaje/personaje.tscn" id="2_t82tv"]
+[ext_resource type="PackedScene" uid="uid://cb8pob5swtcit" path="res://enemigos/policia/policia.tscn" id="3_oaeky"]
 
 [node name="Nivel2" type="Node2D"]
 position = Vector2(555, 301)
@@ -14,3 +15,6 @@ zoom = Vector2(0.1, 0.1)
 
 [node name="Personaje" parent="." instance=ExtResource("2_t82tv")]
 position = Vector2(-939, -63)
+
+[node name="policia" parent="." instance=ExtResource("3_oaeky")]
+position = Vector2(1969, -187)

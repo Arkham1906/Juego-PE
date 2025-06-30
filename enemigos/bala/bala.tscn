@@ -9,6 +9,7 @@ height = 87.9999
 
 [node name="bala" type="Area2D"]
 position = Vector2(-250, 10)
+collision_layer = 2
 script = ExtResource("1_ag3k0")
 
 [node name="Bala" type="Sprite2D" parent="."]
@@ -21,3 +22,5 @@ texture = ExtResource("2_tqo1u")
 position = Vector2(-50, -117)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_t4wd0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
